@@ -4,6 +4,7 @@ import requests
 from paramiko import SSHClient
 from scp import SCPClient
 import config as p
+import cred as c
 
 
 '''
@@ -41,7 +42,7 @@ def create_config_file():
 def upload_config_file(filename):
     ssh = SSHClient()
     ssh.load_system_host_keys()
-    ssh.connect(p.SAT_HOST, p.SAT_SSH_PORT, p.USER, p.PASS)
+    ssh.connect(p.SAT_HOST, p.SAT_SSH_PORT, c.USER, c.PASS)
     scp = SCPClient(ssh.get_transport())
     scp.put(filename, remote_path=p.CONF_PATH)
     scp.close()
