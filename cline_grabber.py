@@ -1,9 +1,9 @@
 from bs4 import BeautifulSoup
-from properties import CLINE_URL, DEFAULT_NO, CONFIG_FILE
+from config import CLINE_URL, DEFAULT_NO, CONFIG_FILE
 import requests
 from paramiko import SSHClient
 from scp import SCPClient
-import properties as p
+import config as p
 
 
 '''
